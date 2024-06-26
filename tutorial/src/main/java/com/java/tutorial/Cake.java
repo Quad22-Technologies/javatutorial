@@ -1,6 +1,8 @@
 package com.java.tutorial;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cake {
     
@@ -16,7 +18,7 @@ public class Cake {
         this.flavor = flavor;
         this.size = size;//small; medium; large
         this.layers = layers;
-        this.ingredients = new ArrayList<>(ingredients);
+        this.ingredients = new ArrayList<>();
     }
 
     public String getFlavor(){
@@ -52,16 +54,18 @@ public class Cake {
 
      }
 
+     public ArrayList<String> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(ArrayList<String> ingredients) {
+        this.ingredients = ingredients;
+    }
+
      public void removeIngredients(String i)
      {
         ingredients.remove(i);
 
-     }
-
-     public ArrayList<String> getIngredients()
-     {
-
-        return ingredients;
      }
 
      public void printIngredients(){
