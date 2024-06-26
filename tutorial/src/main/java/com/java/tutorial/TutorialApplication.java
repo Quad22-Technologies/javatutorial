@@ -49,6 +49,11 @@ public class TutorialApplication {
 
 		System.out.print("\nMETHODS CALL: ");
 		int sum  = addSum();
+        
+		double gpa = calculateGPA(4.0, 3.0, 2.0);
+		System.out.print("\nthe GPA is : " + gpa);
+
+
 		System.out.print("\nThe sum is : " + sum);
 
 		System.out.print("\nWorking with objects: ");
@@ -58,14 +63,30 @@ public class TutorialApplication {
    
         System.out.print("\nThe Cake flavor: " + c.getFlavor());
 
+        c.addIngredients("Flour");
+		c.addIngredients("Sugar");
+		c.addIngredients("eggs");
+		c.addIngredients("Milk");
+		c.addIngredients("Water");
+
+
 	}
 
+	
 	public static int addSum()
 	{
 		int a = 7;
 		int b = 3;
 
 		int total = a + b;
+		return total;
+
+	}
+
+	public static double calculateGPA(double a, double b, double c)
+	{
+		
+		double total = (a + b + c)/3;
 		return total;
 
 	}

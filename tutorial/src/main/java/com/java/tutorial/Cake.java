@@ -1,10 +1,13 @@
 package com.java.tutorial;
 
+import java.util.ArrayList;
+
 public class Cake {
     
     private String flavor;
     private String size;
     private int layers;
+    private ArrayList<String>  ingredients;
 
     //default constructor is a methos in a class that creates an object
     public Cake(){ }
@@ -13,6 +16,7 @@ public class Cake {
         this.flavor = flavor;
         this.size = size;//small; medium; large
         this.layers = layers;
+        this.ingredients = new ArrayList<>();
     }
 
     public String getFlavor(){
@@ -41,6 +45,19 @@ public class Cake {
      {
         this.layers = layers;
      }
+
+     public void addIngredients(String i)
+     {
+        ingredients.add(i);
+
+     }
+
+     public void removeIngredients(String i)
+     {
+        ingredients.remove(i);
+
+     }
+
 
 
 }
