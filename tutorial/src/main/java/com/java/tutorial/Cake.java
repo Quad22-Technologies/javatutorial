@@ -12,11 +12,11 @@ public class Cake {
     //default constructor is a methos in a class that creates an object
     public Cake(){ }
 
-    public Cake(String flavor, String size, int layers) {
+    public Cake(String flavor, String size, int layers, ArrayList<String>  ingredients) {
         this.flavor = flavor;
         this.size = size;//small; medium; large
         this.layers = layers;
-        this.ingredients = new ArrayList<>();
+        this.ingredients = new ArrayList<>(ingredients);
     }
 
     public String getFlavor(){
@@ -57,6 +57,23 @@ public class Cake {
         ingredients.remove(i);
 
      }
+
+     public ArrayList<String> getIngredients()
+     {
+
+        return ingredients;
+     }
+
+     public void printIngredients(){
+        System.out.print("\nIngrediants for the Cake : ");
+    
+        for(String ingredient : ingredients)
+        {
+            System.out.print("-" + ingredient);
+
+        }
+    
+      }
 
 
 

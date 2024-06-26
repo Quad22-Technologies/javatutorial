@@ -69,9 +69,19 @@ public class TutorialApplication {
 		c.addIngredients("Milk");
 		c.addIngredients("Water");
 
+		
+/*
+		c.getIngredients();
+
+		for(String ingredient : c.getIngredients())
+        {
+            System.out.print("-" + ingredient);
+
+        }
+			*/
 
 	}
-
+  
 	
 	public static int addSum()
 	{
