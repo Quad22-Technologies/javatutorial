@@ -1,5 +1,7 @@
 package com.java.tutorial;
 
+import java.util.Arrays;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -63,25 +65,9 @@ public class TutorialApplication {
    
         System.out.print("\nThe Cake flavor: " + c.getFlavor());
 
-        c.addIngredients("Flour");
-		c.addIngredients("Sugar");
-		c.addIngredients("eggs");
-		c.addIngredients("Milk");
-		c.addIngredients("Water");
-
-		
-/*
-		c.getIngredients();
-
-		for(String ingredient : c.getIngredients())
-        {
-            System.out.print("-" + ingredient);
-
-        }
-			*/
-
+     ///   c.setIngredients(Arrays.asList("Flour", "Sugar"));
 	}
-  
+	
 	
 	public static int addSum()
 	{
