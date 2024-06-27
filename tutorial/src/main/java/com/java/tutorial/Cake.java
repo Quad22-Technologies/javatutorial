@@ -11,9 +11,6 @@ public class Cake {
     private int layers;
     private ArrayList<String>  ingredients;
 
-    //default constructor is a methos in a class that creates an object
-    public Cake(){ }
-
     public Cake(String flavor, String size, int layers, ArrayList<String>  ingredients) {
         this.flavor = flavor;
         this.size = size;//small; medium; large

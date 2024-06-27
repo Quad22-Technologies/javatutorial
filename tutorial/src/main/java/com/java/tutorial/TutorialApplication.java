@@ -24,7 +24,6 @@ public class TutorialApplication {
 
         System.out.println(istHot);
 
-		//conditional state if-else
 		if(age == 0)
 		{
 			System.out.print("Age: " + age + " Is grater than 0");
@@ -34,14 +33,11 @@ public class TutorialApplication {
 			System.out.print("Age: " + age + " The condition is correct");
 		}
 
-		//Loops
-		System.out.print("\nFOR LOOPS: ");
 		for(int i = 0; i <=age; i++)
 		{
 			System.out.print("\nThe value of i :  " + i);
 		}
 
-		System.out.print("\nWhile LOOPS: ");
 		int j = 1;
 		while (j < 5)
 		{
@@ -52,7 +48,7 @@ public class TutorialApplication {
 		System.out.print("\nMETHODS CALL: ");
 		int sum  = addSum();
         
-		double gpa = calculateGPA(4.0, 3.0, 2.0);
+		double gpa = calcGPA(4.0, 3.0, 2.0);
 		System.out.print("\nthe GPA is : " + gpa);
 
 
@@ -65,7 +61,6 @@ public class TutorialApplication {
    
         System.out.print("\nThe Cake flavor: " + c.getFlavor());
 
-     ///   c.setIngredients(Arrays.asList("Flour", "Sugar"));
 	}
 	
 	
@@ -79,7 +74,7 @@ public class TutorialApplication {
 
 	}
 
-	public static double calculateGPA(double a, double b, double c)
+	public static double calceGPA(double a, double b, double c)
 	{
 		
 		double total = (a + b + c)/3;
