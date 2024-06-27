@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-
 @SpringBootApplication
 @ComponentScan(basePackageClasses={VehiclesController.class, VehiclesRepository.class, VehiclesService.class})
 public class TutorialApplication {
@@ -65,7 +64,7 @@ public class TutorialApplication {
 			}
 
 			// Update the vehicle
-			UUID updatevehicleId = UUID.fromString("0f626bc1-5593-4638-968d-96ff726ca8dd");;
+			UUID updatevehicleId = UUID.fromString("0f626bc1-5593-4638-968d-96ff726ca8dd");
 			Optional<Vehicles> updatevehicleOpt = vehiclesService.getVehicleById(updatevehicleId);
 			if (vehicleOpt.isPresent()) {
 				Vehicles vehicleToUpdate = updatevehicleOpt.get();
@@ -88,7 +87,14 @@ public class TutorialApplication {
 
 
 
+
+
 	
+
+}
+/*
+
+
 	public static int addSum()
 	{
 		int a = 7;
@@ -101,17 +107,14 @@ public class TutorialApplication {
 
 	public static double calculateGPA(double a, double b, double c)
 	{
-		
+
 		double total = (a + b + c)/3;
 		return total;
 
 	}
 
 
-	
 
-}
-/*
 System.out.println("Hello World");
 
 		int age = 16;
