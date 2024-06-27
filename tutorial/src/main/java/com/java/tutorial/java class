@@ -1,0 +1,30 @@
+package com.java.tutorial;
+
+public class Cake {
+
+    private String flavor;
+    private String size;
+    private int layers;
+
+
+    public Cake(){ }
+
+    public Cake(String flavor, String size, int layers) {
+        this.flavor = flavor;
+        this.size = size;
+        this.layers = layers;
+}
+
+public void setFlavor(){
+    return flavor;
+}
+
+public String setSize(String size)
+{
+    return this.size = size;
+
+}
+
+public int getlayers(){
+    return layers
+}
