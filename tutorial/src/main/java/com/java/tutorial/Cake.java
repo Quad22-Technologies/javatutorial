@@ -1,6 +1,12 @@
 package com.java.tutorial;
 
+<<<<<<< Updated upstream
 import java.util.ArrayList;
+=======
+//import java.lang.reflect.Array;
+import java.util.ArrayList;
+//import java.util.List;
+>>>>>>> Stashed changes
 
 public class Cake {
     private String flavor;

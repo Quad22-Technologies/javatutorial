@@ -1,7 +1,25 @@
 package com.java.tutorial;
 
+<<<<<<< Updated upstream
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+=======
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.java.tutorial.vehicles.Vehicles;
+import com.java.tutorial.vehicles.VehiclesController;
+import com.java.tutorial.vehicles.VehiclesRepository;
+import com.java.tutorial.vehicles.VehiclesService;
+>>>>>>> Stashed changes
 
 @SpringBootApplication
 public class TutorialApplication {
@@ -79,9 +97,81 @@ public class TutorialApplication {
 */
 	}
 
+<<<<<<< Updated upstream
 	public void printIngredients(Cake cake)
 	{
 		System.out.print("\nIngredients for the Cake : ");
+=======
+	@Bean
+	public CommandLineRunner demo() {
+		return (args) -> {
+			// Create a new vehicle
+			Vehicles vehicle1 = new Vehicles();
+			vehicle1.setMake("Jeep");
+			vehicle1.setModel("Hummer");
+			vehicle1.setYear(2016);
+			vehiclesService.createVehicle(vehicle1);
+
+			Vehicles vehicle2 = new Vehicles();
+			vehicle2.setMake("BMW");
+			vehicle2.setModel("Mitsubishi");
+			vehicle2.setYear(2012);
+			vehiclesService.createVehicle(vehicle2);
+
+			Vehicles vehicle3 = new Vehicles();
+			vehicle3.setMake("Chevrolet");
+			vehicle3.setModel("Ram");
+			vehicle3.setYear(2012);
+			vehiclesService.createVehicle(vehicle3);
+
+			// Retrieve all vehicles and send to a list
+			List<Vehicles> allVehicles = vehiclesService.getAllVehicles();
+
+			// Print out the values
+			System.out.println("All Vehicles:");
+			for (Vehicles vehicle : allVehicles) {
+				System.out.println("Vehicle ID: " + vehicle.getVehicleid());
+				System.out.println("Make: " + vehicle.getMake());
+				System.out.println("Model: " + vehicle.getModel());
+				System.out.println("Year: " + vehicle.getYear());
+				System.out.println("-----");
+			}
+
+			// Retrieve a vehicle by ID
+			UUID vehicleId = UUID.fromString("0f626bc1-5593-4638-968d-96ff726ca8dd"); //use your own Vehicle ID
+			System.out.println("Vehicle with ID: " + vehicleId);
+			Optional<Vehicles> vehicleOpt = vehiclesService.getVehicleById(vehicleId);
+			if (vehicleOpt.isPresent()) {
+				Vehicles vehicle = vehicleOpt.get();
+				System.out.println("Vehicle ID: " + vehicle.getVehicleid());
+				System.out.println("Make: " + vehicle.getMake());
+				System.out.println("Model: " + vehicle.getModel());
+				System.out.println("Year: " + vehicle.getYear());
+			} else {
+				System.out.println("Vehicle not found.");
+			}
+
+			// Update the vehicle
+			UUID updatevehicleId = UUID.fromString("0f626bc1-5593-4638-968d-96ff726ca8dd");
+			Optional<Vehicles> updatevehicleOpt = vehiclesService.getVehicleById(updatevehicleId);
+			if (vehicleOpt.isPresent()) {
+				Vehicles vehicleToUpdate = updatevehicleOpt.get();
+				vehicleToUpdate.setModel("Updated Model");
+				vehiclesService.updateVehicle(vehicleToUpdate);
+				System.out.println("Updated Vehicle:");
+				vehiclesService.getVehicleById(updatevehicleId).ifPresent(System.out::println);
+			} else {
+				System.out.println("Vehicle not found for update.");
+			}
+
+			// Delete the vehicle
+			/*vehiclesService.deleteVehicle(vehicleId);
+			System.out.println("Vehicle Deleted. Remaining Vehicles:");
+			vehiclesService.getAllVehicles().forEach(System.out::println);
+
+			 */
+		};
+>>>>>>> Stashed changes
 	}
 
 	public static int addSum()
