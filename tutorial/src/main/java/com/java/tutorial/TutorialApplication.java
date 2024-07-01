@@ -1,9 +1,9 @@
 package com.java.tutorial;
 
-import com.java.tutorial.vehicles.Vehicles;
-import com.java.tutorial.vehicles.VehiclesController;
-import com.java.tutorial.vehicles.VehiclesRepository;
-import com.java.tutorial.vehicles.VehiclesService;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,9 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import com.java.tutorial.vehicles.Vehicles;
+import com.java.tutorial.vehicles.VehiclesController;
+import com.java.tutorial.vehicles.VehiclesRepository;
+import com.java.tutorial.vehicles.VehiclesService;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses={VehiclesController.class, VehiclesRepository.class, VehiclesService.class})
@@ -31,10 +32,22 @@ public class TutorialApplication {
 		return (args) -> {
 			// Create a new vehicle
 			Vehicles vehicle1 = new Vehicles();
-			vehicle1.setMake("Toyota");
-			vehicle1.setModel("Corolla");
-			vehicle1.setYear(2022);
+			vehicle1.setMake("Jeep");
+			vehicle1.setModel("Hummer");
+			vehicle1.setYear(2016);
 			vehiclesService.createVehicle(vehicle1);
+
+			Vehicles vehicle2 = new Vehicles();
+			vehicle2.setMake("BMW");
+			vehicle2.setModel("Mitsubishi");
+			vehicle2.setYear(2012);
+			vehiclesService.createVehicle(vehicle2);
+
+			Vehicles vehicle3 = new Vehicles();
+			vehicle3.setMake("Chevrolet");
+			vehicle3.setModel("Ram");
+			vehicle3.setYear(2012);
+			vehiclesService.createVehicle(vehicle3);
 
 			// Retrieve all vehicles and send to a list
 			List<Vehicles> allVehicles = vehiclesService.getAllVehicles();
